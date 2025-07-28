@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce/utils/colors.dart';
+import 'package:e_commerce/widgets/app_column.dart';
 import 'package:e_commerce/widgets/big_text.dart';
 import 'package:e_commerce/widgets/icon_and_text.dart';
 import 'package:flutter/material.dart';
@@ -253,51 +254,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
               child: Container(
                 padding: EdgeInsets.all(15 * scaleFactor),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Chinese Side"),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) {
-                            return Icon(
-                              Icons.star,
-                              color: AppColors.mainColor,
-                              size: 15 * scaleFactor,
-                            );
-                          }),
-                        ),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText(text: "4.5"),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText(text: "1287 comments"),
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndText(
-                          icon: Icons.circle_sharp,
-                          text: "Normal",
-                          iconColor: AppColors.iconColor1,
-                        ),
-                        IconAndText(
-                          icon: Icons.location_on,
-                          text: "1.7km",
-                          iconColor: AppColors.mainColor,
-                        ),
-                        IconAndText(
-                          icon: Icons.watch_later_outlined,
-                          text: "32min",
-                          iconColor: AppColors.iconColor2,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: AppColumn()
               ),
             ),
           ),
